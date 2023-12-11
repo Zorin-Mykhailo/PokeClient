@@ -1,0 +1,50 @@
+﻿<Window x:Class="PokeClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokeClient"
+        mc:Ignorable="d"
+        Title="Zorin M - Homework 21 - async/await" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="25"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" MinWidth="25"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" MinHeight="25"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TxtDescription" Grid.Column="1" Grid.Row="0">
+            В додатку використовується Апі покемонів (https://pokeapi.co/) та фонове їх завантаження (пакетами).
+        </TextBlock>
+
+
+        <DataGrid x:Name="TablePokemons" Grid.Column="1" Grid.Row="1"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Order" Binding="{Binding Path=order}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=name}"/>
+                <DataGridTextColumn Header="Height" Binding="{Binding Path=height}"/>
+                <DataGridTextColumn Header="Weight" Binding="{Binding Path=weight}"/>
+                <DataGridTextColumn Header="Base experience" Binding="{Binding Path=base_experience}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=id}"/>
+                <DataGridCheckBoxColumn Header="Is default" Binding="{Binding Path=is_default}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto" MinWidth="25"/>
+            </Grid.ColumnDefinitions>
+            
+            <ProgressBar x:Name="ProgressStatus" Grid.Column="0" Minimum="0" Margin="0,3,3,3"/>
+            <Button x:Name="BtnLoadPokemons" Grid.Column="1" Content="Завантажити покемонів" Click="BtnLoadPokemons_Click" Margin="3,3,0,3" Padding="3"/>
+        </Grid>
+
+    </Grid>
+</Window>

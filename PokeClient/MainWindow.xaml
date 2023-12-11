@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokeClient"
         mc:Ignorable="d"
-        Title="Zorin M - Homework 21 - async/await" Height="450" Width="800">
+        Title="Zorin M - Homework 21" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" MinWidth="25"/>
